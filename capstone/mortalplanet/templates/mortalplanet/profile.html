@@ -1,0 +1,104 @@
+{% extends "mortalplanet/layout.html" %}
+{% load static %}
+
+{% block body %}
+<h2>{{user.first_name}}'s profile</h2>
+
+<ul class="nav">
+    <li class="nav-item">
+        <button class="nav-link" id="my-posts">
+            My Posts
+        </button> &nbsp;
+    </li>
+    <li>
+        <button class="nav-link" id="inbox">
+            Inbox
+        </button> &nbsp;
+    </li>
+    <li>
+        <button class="nav-link" id="sent">
+            Sent
+        </button> &nbsp;
+    </li>
+    <li>
+        <button class="nav-link" id="compose">
+            Send Message
+        </button> &nbsp;
+    </li>
+</ul>
+
+
+<div id="messages-view">
+</div>
+
+
+<div id="message-view">
+    
+    <div>
+        <strong>From:</strong> <span id="message-from"></span>
+    </div>
+    <div>
+        <strong>To:</strong> <span id="message-to"></span>
+    </div>
+    <div>
+        <strong>Subject:</strong> <span id="message-subject"></span>
+    </div>
+    <div>
+        <strong>Timestamp:</strong> <span id="message-timestamp"></span>
+    </div>
+    <button id="reply" class="btn btn-sm btn-outline-primary">Reply</button>
+    <hr>
+    <div id="message-body">
+    </div>
+</div>
+
+<div id="compose-view">
+    <h3>New Message</h3>
+    <form id="compose-form" method="post" action="{% url 'compose' %}">
+        <div class="form-group">
+            From: <input disabled class="form-control" value="{{ request.user }}">
+        </div>
+        <div class="form-group">
+            To: <input id="compose-recipients" class="form-control">
+        </div>
+        <div class="form-group">
+            <input class="form-control" id="compose-subject" placeholder="Subject">
+        </div>
+        <textarea class="form-control" id="compose-body" placeholder="Body"></textarea>
+        <input type="submit" class="btn btn-primary" />
+    </form>
+</div>
+
+
+<div id="my-posts-view">
+    {% for post in myposts %}
+    <div class="card mb-3">
+        <small>{{post.category}}</small>
+        <a href="{% url 'post' post.id %}">
+            <div class="row no-gutters">
+                {% if post.image%}
+                <div class="col-md-4">
+                    <img src="{{post.image.url }}" class="card-img" alt="{{ post.title }}">
+                </div>
+                {% endif %}
+                <div class="col-md-8">
+                    <div class="card-body">
+                        {% if not post.open %}
+                        <div class="alert-danger">
+                            <small>This post is no longer open.</small>
+                        </div>
+                        {% endif %}
+                        <h5 class="card-title">
+                            {{ post.title }}
+                        </h5>
+                        <p class="card-text">{{ post.description }}</p>
+                        <p class="card-text"><small class="text-muted">Created {{ post.creation_time }}
+                                {{post.location}}</small></p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

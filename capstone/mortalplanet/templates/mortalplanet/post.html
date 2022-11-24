@@ -1,0 +1,78 @@
+{% extends "mortalplanet/layout.html" %}
+
+
+{% block body %}
+{% if message %}
+{{message}}
+{% endif %}
+<a href="javascript:history.back()"> 
+    Back Button </a>
+{% if not post.open %}
+<div class="alert alert-danger" role="alert">
+    This post is no longer open.
+</div>
+{% endif %}
+{% if post.image%}
+<div class="col-md-4">
+    <img src="{{ post.image.url }}" class="card-img" alt="{{ post.title }} Image">
+</div>
+{% endif %}
+<h2>
+    {{post.title}}
+</h2>
+
+<p>
+    {{ post.description }}
+</p>
+
+{% if user == post.poster %}
+{% if post.open%}
+<form action="{% url 'close' post.id %}" method="post">
+    {% csrf_token %}
+    <input class="btn btn-primary" type="submit" value="Close Post">
+</form>
+{%else%}
+<form action="{% url 'close' post.id %}" method="post">
+    {% csrf_token %}
+    <input class="btn btn-primary" type="submit" value="Open Post">
+</form>
+{% endif %}
+{% endif %}
+
+<br />
+
+<h4>Details</h4>
+<ul>
+    <li>Posted by: {{ post.poster }}</a></li>
+    <li>Created: {{ post.creation_time }}</li>
+    <li>Location: {{ post.location }}</li>
+</ul>
+
+
+<h4>Comments</h4>
+
+<ul class="list-group">
+    {% for comment in comments %}
+    <li class="list-group-item">
+        <div>
+            <strong>{{ comment.commenter.username }}</strong>: {{ comment.content }}
+        </div>
+        <small>{{ comment.creation_time }}</small>
+    </li>
+    {% empty %}
+    <li class="list-group-item">No comments.</li>
+    {% endfor %}
+</ul>
+
+{% if user.is_authenticated %}
+<form action="{% url 'comment' post.id %}" method="post">
+    {% csrf_token %}
+    <input type="text" class="form-control" name="comment" placeholder="Comment">
+    <input class="btn-sm btn-primary" type="Submit" value="Post New Comment">
+</form>
+{%else%}
+<a class="nav-link" href="{% url 'login' %}"> Log in to comment</a>
+{% endif %}
+
+
+{% endblock %}

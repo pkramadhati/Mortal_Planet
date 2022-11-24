@@ -1,0 +1,90 @@
+{% extends "mortalplanet/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+
+<ul class="nav sub-nav">
+    <p>Filter by Category:</p> &nbsp;
+    {% for category in categories %}
+    <li>
+        <a class="nav-link" href="{% url 'category' category.id%}">
+            {{category}} &nbsp;
+        </a>
+    </li>
+    {% endfor %}
+    <li>
+        <button id="open-toggle"> Open Posts Only</button>
+    </li>
+</ul>
+
+<div id="all-posts-view">
+    {% for post in posts %}
+    <div class="card mb-3">
+        <small>{{post.category}}</small>
+        <a href="{% url 'post' post.id %}">
+            <div class="row no-gutters">
+                {% if post.image%}
+                <div class="col-md-4">
+                    <img src="{{post.image.url }}" class="card-img" alt="{{ post.title }}">
+                </div>
+                {% endif %}
+                <div class="col-md-8">
+                    <div class="card-body">
+                        {% if not post.open %}
+                        <div class="alert-danger">
+                            <small>This post is no longer open.</small>
+                        </div>
+                        {% endif %}
+                        <h5 class="card-title">
+                            {{ post.title }}
+                        </h5>
+                        <p class="card-text">{{ post.description }}</p>
+                        <p class="card-text"><small class="text-muted">Created {{ post.creation_time }}
+                                {{post.location}}</small></p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    {% empty %}
+    NO POSTS FOR THIS TOPIC
+    {% endfor %}
+</div>
+
+<div id="open-posts-view">
+    {% for post in posts %}
+    {% if post.open %}
+    <div class="card mb-3">
+        <small>{{post.category}}</small>
+        <a href="{% url 'post' post.id %}">
+            <div class="row no-gutters">
+                {% if post.image%}
+                <div class="col-md-4">
+                    <img src="{{post.image.url }}" class="card-img" alt="{{ post.title }}">
+                </div>
+                {% endif %}
+                <div class="col-md-8">
+                    <div class="card-body">
+                        {% if not post.open %}
+                        <div class="alert-danger">
+                            <small>This post is no longer open.</small>
+                        </div>
+                        {% endif %}
+                        <h5 class="card-title">
+                            {{ post.title }}
+                        </h5>
+                        <p class="card-text">{{ post.description }}</p>
+                        <p class="card-text"><small class="text-muted">Created {{ post.creation_time }}
+                                {{post.location}}</small></p>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    {% endif %}
+    {% empty %}
+    NO POSTS FOR THIS TOPIC
+    {% endfor %}
+</div>
+{% endblock %}

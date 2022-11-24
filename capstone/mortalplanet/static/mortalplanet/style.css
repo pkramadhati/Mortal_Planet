@@ -1,0 +1,135 @@
+textarea {
+    min-height: 400px;
+}
+
+.message-read {
+    background-color: #aaaaaa;
+}
+
+.message-row {
+    border: 1px solid black;
+    cursor: pointer;
+    padding: 5px;
+    width: 100%;
+}
+
+.message-row strong {
+    padding-right: 8px;
+}
+
+.message-timestamp {
+    color: #888888;
+    float: right;
+}
+
+/*create post button*/
+
+.floating-container {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    bottom: 0;
+    right: 0;
+    margin: 35px 25px;
+    z-index: 2;
+  }
+  .floating-container:hover {
+    height: 300px;
+  }
+  .floating-container:hover .floating-button {
+    box-shadow: 0 10px 25px rgba(44, 179, 240, 0.6);
+    -webkit-transform: translatey(5px);
+            transform: translatey(5px);
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .floating-container .floating-button {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    background: #00CFFF;
+    bottom: 0;
+    border-radius: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: white;
+    line-height: 65px;
+    text-align: center;
+    font-size: 23px;
+    z-index: 100;
+    box-shadow: 0 10px 25px -5px rgba(44, 179, 240, 0.6);
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .floating-container .float-element {
+    position: relative;
+    display: block;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 15px auto;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+    line-height: 50px;
+    z-index: 0;
+    opacity: 0;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+  .floating-container .float-element .material-icons {
+    vertical-align: middle;
+    font-size: 16px;
+  }
+
+  /* Navigation menu */
+
+  .main-nav{
+    background-color: #E3F5FA;
+    margin:10px 0px;
+  }
+
+ .main-nav .nav-link[aria-current="page"] {
+    background-color: #B3EFF8;
+  }
+
+.main-nav a {
+    color:#1C304A;
+}
+
+/*Sub Navigation Menu*/
+.sub-nav{
+    background-color: #B3EFF8;
+    margin:10px 0px;
+}
+
+.sub-nav a{
+    color:#1C304A;
+}
+
+.sub-nav a:hover{
+    background-color:#ffff;
+}
+
+.sub-nav .nav-link[aria-current="page"] {
+    color: #046B99;
+    background-color: #fff;
+  }
+
+/*Logo*/
+.logo img{
+max-width: 350px;
+}
+
+.logo{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.logo img:hover{
+    max-width: 370px;
+    opacity: .9;
+}

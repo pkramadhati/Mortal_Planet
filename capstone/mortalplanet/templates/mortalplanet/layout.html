@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Mortal Planet</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="{% static 'mortalplanet/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="logo">
+        <a href="{% url 'index' %}">
+            <img src="/media/logo/logo.PNG">
+        </a>
+    </div>
+
+    <ul class="nav main-nav">
+        <li class="nav-item">
+            <a class="nav-link">Discover</a>
+        </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'share' %}">Share</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'engage' %}">Enagage</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'profile' user.id %}"><span class="material-icons">person</span> </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}"><span class="material-icons">logout</span></a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}"><span class="material-icons">login</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'register' %}">Sign Up</a>
+        </li>
+        {% endif %}
+    </ul>
+
+    {% if user.is_authenticated %}
+    <div class="floating-container">
+        <a class="floating-button" href="{% url 'create' %}">+</a>
+    </div>
+    {% endif %}
+
+    {% block body %}
+    {% endblock %}
+</body>
+<script src="{% static 'mortalplanet/main.js' %}"></script>
+
+</html>

@@ -1,0 +1,10 @@
+{% extends "mortalplanet/layout.html" %}
+{% load static %}
+
+{% block body %}
+{% if user.is_authenticated %}
+<h2>Welcome {{user}}</h2>
+{% else %}
+<h2>Welcome to Mortal Planet</h2>
+{% endif %}
+{% endblock %}
