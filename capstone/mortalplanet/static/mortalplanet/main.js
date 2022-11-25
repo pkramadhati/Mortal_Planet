@@ -44,7 +44,7 @@ navlink.forEach(link => {
   if(toggleopen){
     toggleopen.addEventListener('click', () => load_openposts());
     document.querySelector('#open-posts-view').style.display = 'none';
-    document.querySelector('#open-toggle').style.background = 'LightGray';
+    document.querySelector('#open-toggle').style.background = '#B3EFF8';
   }
   
 
@@ -90,12 +90,12 @@ function load_openposts() {
   if (document.querySelector('#open-posts-view').style.display == 'none') {
     document.querySelector('#all-posts-view').style.display = 'none';
     document.querySelector('#open-posts-view').style.display = 'block';
-    document.querySelector('#open-toggle').style.background = 'green';
+    document.querySelector('#open-toggle').style.background = '#00CFFF';
   }
   else {
     document.querySelector('#all-posts-view').style.display = 'block';
     document.querySelector('#open-posts-view').style.display = 'none';
-    document.querySelector('#open-toggle').style.background = 'LightGray';
+    document.querySelector('#open-toggle').style.background = '#B3EFF8';
   }
 
 }

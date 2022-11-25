@@ -4,13 +4,11 @@
 {% block body %}
 
 <ul class="nav sub-nav">
-    <li>
         <p>Filter by Category:</p> &nbsp;
-    </li>
     {% for category in categories %}
     <li class="nav-item">
         <a class="nav-link" href="{% url 'category' category.id%}">
-            {{category}} &nbsp;
+            {{category}}
         </a>
     </li>
     {% endfor %}
