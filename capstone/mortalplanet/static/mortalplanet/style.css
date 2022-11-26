@@ -1,3 +1,7 @@
+body {
+    font-family: 'Titillium Web', sans-serif;
+}
+
 textarea {
     min-height: 400px;
 }
@@ -53,14 +57,14 @@ textarea {
     height: 65px;
     background: #00CFFF;
     bottom: 0;
-    border-radius: 50%;
+    border-radius: 36% 64% 36% 64% / 67% 71% 29% 33%;
     left: 0;
     right: 0;
     margin: auto;
     color: white;
     line-height: 65px;
     text-align: center;
-    font-size: 23px;
+    font-size: 28px;
     z-index: 100;
     box-shadow: 0 10px 25px -5px rgba(44, 179, 240, 0.6);
     cursor: pointer;
@@ -71,7 +75,7 @@ textarea {
 .floating-container .float-element {
     position: relative;
     display: block;
-    border-radius: 50%;
+    border-radius: 36% 64% 36% 64% / 67% 71% 29% 33%;
     width: 50px;
     height: 50px;
     margin: 15px auto;
@@ -87,7 +91,7 @@ textarea {
 
 .floating-container .float-element .material-icons {
     vertical-align: middle;
-    font-size: 16px;
+    font-size: 24px;
 }
 
 /* Navigation menu */
@@ -122,19 +126,40 @@ textarea {
 }
 
 .main-nav a:hover {
-    border-radius: 20px;
+
+    border-radius: 30% 70% 59% 41% / 55% 35% 65% 45%;
     background-color: #B3EFF8;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 .main-nav .nav-link[aria-current="page"] {
-    border-radius: 20px;
+    border-radius: 30% 70% 59% 41% / 55% 35% 65% 45%;
     background-color: #B3EFF8;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
-.main-nav .nav-right {
-    margin-left: 70%;
+@media screen and (min-width:1260px) {
+    .main-nav .nav-right {
+        margin-left: 64%;
+    }
+}
+
+@media screen and (max-width:1259px) {
+    .main-nav .nav-right {
+        margin-left: 55%;
+    }
+}
+
+@media screen and (max-width:1000px) {
+    .main-nav .nav-right {
+        margin-left: 50%;
+    }
+}
+
+@media screen and (max-width:999px) {
+    .main-nav .nav-right {
+        margin: 0px;
+    }
 }
 
 /*Sub Navigation Menu*/
@@ -146,18 +171,19 @@ textarea {
 }
 
 .sub-nav a {
+    margin: 0px 2px;
     color: #1C304A;
 }
 
 .sub-nav a:hover {
     margin: 5px, 0px;
-    border-radius: 20px;
+    border-radius: 70% 30% 59% 41% / 62% 50% 50% 38%;
     background-color: #ffff;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 .sub-nav .nav-link[aria-current="page"] {
-    border-radius: 20px;
+    border-radius: 70% 30% 59% 41% / 62% 50% 50% 38%;
     color: #046B99;
     background-color: #fff;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
@@ -186,4 +212,58 @@ textarea {
 .logo img:hover {
     max-width: 370px;
     opacity: .9;
+}
+
+/*Posts*/
+
+.container {
+    margin-top: 50px;
+    background-color: #F3F3F3;
+    border-radius: 58% 42% 62% 38% / 31% 96% 4% 69%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.card-text-description {
+    max-width: 300px;
+    max-height: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+.card-block:nth-child(odd) {
+    padding: 40px 85px 40px 100px;
+    background-color: #E3F5FA;
+    border-radius: 37% 63% 70% 30% / 44% 38% 62% 56%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+
+.card-block:nth-child(even) {
+    padding: 40px 40px 80px 100px;
+    background-color: #ddedea;
+    ;
+    border-radius: 17% 83% 32% 68% / 58% 48% 52% 42%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    /* border-radius:35% 65% 84% 16% / 58% 48% 52% 42% */
+}
+
+.card-block {
+    display: flex;
+    justify-content: center;
+    width: 850px;
+    max-height: 300px;
+    margin: 10px;
+}
+
+.card-block img {
+    padding: 10px 10px 10px 10px;
+    max-width: 300px;
+    height: auto;
+
+}
+
+.card-body {
+    margin-left: 20px;
 }

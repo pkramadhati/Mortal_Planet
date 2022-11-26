@@ -18,18 +18,18 @@
     </li>
 </ul>
 
-<div id="all-posts-view">
+<div id="all-posts-view" class="container">
     {% for post in posts %}
-    <div class="card mb-3">
-        <small>{{post.category}}</small>
+    <div class="card card-block">
+        <small class="post-category">{{post.category}}</small>
         <a href="{% url 'post' post.id %}">
             <div class="row no-gutters">
                 {% if post.image%}
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <img src="{{post.image.url }}" class="card-img" alt="{{ post.title }}">
                 </div>
                 {% endif %}
-                <div class="col-md-8">
+                <div class="col-md-9">
                     <div class="card-body">
                         {% if not post.open %}
                         <div class="alert-danger">
@@ -39,7 +39,7 @@
                         <h5 class="card-title">
                             {{ post.title }}
                         </h5>
-                        <p class="card-text">{{ post.description }}</p>
+                        <p class="card-text card-text-description">{{ post.description }}</p>
                         <p class="card-text"><small class="text-muted">Created {{ post.creation_time }}
                                 {{post.location}}</small></p>
                     </div>
@@ -52,19 +52,19 @@
     {% endfor %}
 </div>
 
-<div id="open-posts-view">
+<div id="open-posts-view" class="container">
     {% for post in posts %}
     {% if post.open %}
-    <div class="card mb-3">
-        <small>{{post.category}}</small>
+    <div class="card card-block">
+        <small class="post-category">{{post.category}}</small>
         <a href="{% url 'post' post.id %}">
             <div class="row no-gutters">
                 {% if post.image%}
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <img src="{{post.image.url }}" class="card-img" alt="{{ post.title }}">
                 </div>
                 {% endif %}
-                <div class="col-md-8">
+                <div class="col-md-9">
                     <div class="card-body">
                         {% if not post.open %}
                         <div class="alert-danger">
@@ -74,7 +74,7 @@
                         <h5 class="card-title">
                             {{ post.title }}
                         </h5>
-                        <p class="card-text">{{ post.description }}</p>
+                        <p class="card-text card-text-description">{{ post.description }}</p>
                         <p class="card-text"><small class="text-muted">Created {{ post.creation_time }}
                                 {{post.location}}</small></p>
                     </div>
