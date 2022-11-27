@@ -17,7 +17,7 @@
     </li>
 </ul>
 
-<div id="all-posts-view" class="container">
+<div id="all-posts-view" class="posts-view container">
     {% for post in posts %}
     <div class="card card-block">
         <small class="post-category heading-five">{{post.category}}</small>
@@ -51,7 +51,7 @@
     {% endfor %}
 </div>
 
-<div id="open-posts-view" class="container">
+<div id="open-posts-view" class="posts-view container">
     {% for post in posts %}
     {% if post.open %}
     <div class="card card-block">

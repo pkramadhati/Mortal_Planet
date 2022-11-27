@@ -5,74 +5,115 @@
 {% if message %}
 {{message}}
 {% endif %}
-<a href="javascript:history.back()"> 
-    Back Button </a>
-{% if not post.open %}
-<div class="alert alert-danger" role="alert">
-    This post is no longer open.
+
+<div class="back-icon">
+    <a href="javascript:history.back()">
+        <span class="material-symbols-outlined">
+            arrow_back_ios_new
+        </span>
+    </a>
 </div>
-{% endif %}
-{% if post.image%}
-<div class="col-md-4">
-    <img src="{{ post.image.url }}" class="card-img" alt="{{ post.title }} Image">
-</div>
-{% endif %}
-<h2>
-    {{post.title}}
-</h2>
 
-<p>
-    {{ post.description }}
-</p>
-
-{% if user == post.poster %}
-{% if post.open%}
-<form action="{% url 'close' post.id %}" method="post">
-    {% csrf_token %}
-    <input class="btn btn-primary" type="submit" value="Close Post">
-</form>
-{%else%}
-<form action="{% url 'close' post.id %}" method="post">
-    {% csrf_token %}
-    <input class="btn btn-primary" type="submit" value="Open Post">
-</form>
-{% endif %}
-{% endif %}
-
-<br />
-
-<h4>Details</h4>
-<ul>
-    <li>Posted by: {{ post.poster }}</a></li>
-    <li>Created: {{ post.creation_time }}</li>
-    <li>Location: {{ post.location }}</li>
-</ul>
-
-
-<h4>Comments</h4>
-
-<ul class="list-group">
-    {% for comment in comments %}
-    <li class="list-group-item">
-        <div>
-            <strong>{{ comment.commenter.username }}</strong>: {{ comment.content }}
+<div class="expanded-post-view container">
+    <div class="row ">
+        <div class="col-6">
+            <div class="row justify-content-start">
+                <small class="post-category heading-five">{{post.category}}</small>
+            </div>
         </div>
-        <small>{{ comment.creation_time }}</small>
-    </li>
-    {% empty %}
-    <li class="list-group-item">No comments.</li>
-    {% endfor %}
-</ul>
-
-{% if user.is_authenticated %}
-<form action="{% url 'comment' post.id %}" method="post">
-    {% csrf_token %}
-    <input type="text" class="form-control" name="comment" placeholder="Comment">
-    <input class="btn-sm btn-primary" type="Submit" value="Post New Comment">
-</form>
-{%else%}
-<a class="nav-link" href="{% url 'login' %}"> Log in to comment</a>
-{% endif %}
-
+        <div class="col-6">
+            <div class="row open-close-button justify-content-end">
+                {% if user == post.poster %}
+                {% if post.open%}
+                <form action="{% url 'close' post.id %}" method="post">
+                    {% csrf_token %}
+                    <input class="btn btn-primary" type="submit" value="Close Post">
+                </form>
+                {%else%}
+                <form action="{% url 'close' post.id %}" method="post">
+                    {% csrf_token %}
+                    <input class="btn btn-primary" type="submit" value="Open Post">
+                </form>
+                {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {% if not post.open %}
+            <div class="alert alert-danger" role="alert">
+                This post is no longer open.
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        {% if post.image%}
+        <div class="col-6">
+            <img src="{{ post.image.url }}" class="card-img" alt="{{ post.title }} Image">
+        </div>
+        {% endif %}
+    </div>
+    <div class="row">
+        <div class="col expanded-post-text-content">
+            <div class="row mb-2">
+                <div class="col-9 ">
+                    <h2 class="heading-two-medium">{{post.title}}</h2>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col paragraph-three">
+                    <p>
+                        {{ post.description }}
+                    </p>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col paragraph-four">
+                    <p> Posted by <b>{{ post.poster }} </b> on {{ post.creation_time }} from {{ post.location }} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col expanded-post-comments">
+            <div class="row">
+                <div class="col">
+                    <h4 class="heading-three-medium">Comments</h4>
+                </div>
+            </div>
+            <div class="row comments">
+                <div class="col">
+                    <ul class="list-group">
+                        {% for comment in comments %}
+                        <li class="list-group-item">
+                            <div class="paragraph-four">
+                                <strong>{{ comment.commenter.username }}</strong>: {{ comment.content }}
+                            </div>
+                            <small class="paragraph-five">{{ comment.creation_time }}</small>
+                        </li>
+                        {% empty %}
+                        <li class="list-group-item">No comments.</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    {% if user.is_authenticated %}
+                    <form action="{% url 'comment' post.id %}" method="post">
+                        {% csrf_token %}
+                        <input type="text" class="form-control" name="comment" placeholder="Type Something...">
+                        <input class="btn btn-primary" type="Submit" value="Post Comment">
+                    </form>
+                    {%else%}
+                    <a class="nav-link" href="{% url 'login' %}"> Log in to comment</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

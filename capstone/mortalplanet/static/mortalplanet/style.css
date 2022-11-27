@@ -216,7 +216,7 @@ textarea {
 
 /*Posts*/
 
-.container {
+.posts-view.container {
     margin-top: 50px;
     padding: 30px;
     padding-bottom: 50px;
@@ -243,7 +243,7 @@ textarea {
 
 
 .card-block:nth-child(odd) {
-    padding: 45px 85px 40px 100px;
+    padding: 55px 85px 50px 100px;
     background-color: #E3F5FA;
     border-radius: 37% 63% 70% 30% / 44% 38% 62% 56%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -251,9 +251,8 @@ textarea {
 
 
 .card-block:nth-child(even) {
-    padding: 45px 40px 80px 100px;
+    padding: 45px 125px 80px 100px;
     background-color: #ddedea;
-    ;
     border-radius: 17% 83% 32% 68% / 58% 48% 52% 42%;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     /* border-radius:35% 65% 84% 16% / 58% 48% 52% 42% */
@@ -279,10 +278,131 @@ textarea {
     padding: 5px !important;
 }
 
-.card-body .alert-danger{
-    max-width: 450px;
+.card-body .alert-danger {
+    max-width: 400px;
 }
 
+
+/*expanded posts*/
+
+.material-symbols-outlined {
+    color:#046B99;
+    font-size: 35px;
+}
+
+.back-icon {
+    padding: 10px;
+    margin: 10px;
+}
+
+.expanded-post-view.container {
+    border-radius: 125px;
+    width: 900px;
+    height: auto;
+    background-color: #E3F5FA;
+    padding: 60px;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.expanded-post-view .open-close-button input {
+    background-color: #046B99;
+    border-radius: 25px;
+    border-color: #046B99;
+}
+
+.expanded-post-view .open-close-button input:hover {
+    background-color: #1C304A;
+    border-color: #1C304A;
+}
+
+.expanded-post-view .alert-danger {
+    margin-top: 10px;
+}
+
+.expanded-post-view img {
+    margin: 10px;
+    border-radius: 25px;
+}
+
+.expanded-post-text-content {
+    background-color: #fff;
+    margin: 15px 20px;
+    padding: 35px;
+    border-radius: 40px;
+}
+
+.expanded-post-comments {
+    background-color: #fff;
+    margin: 15px 10px;
+    padding: 35px;
+    border-radius: 40px;
+}
+
+.expanded-post-comments input.form-control {
+    background-color: #ebebeb;
+    border-radius: 25px;
+    border-color: #ebebeb;
+    margin: 10px 10px 20px 0px;
+    height: 50px;
+}
+
+.expanded-post-comments input.btn {
+    background-color:#046B99;
+    border-color: #046B99;
+    color: #fff;
+    border-radius: 45px;
+}
+
+.expanded-post-comments input.btn:hover {
+    background-color: #1C304A;
+    border-color: #1C304A;
+    color: #fff;
+    border-radius: 45px;
+}
+
+.expanded-post-comments .comments .list-group-item {
+    border-radius: 25px;
+    margin-bottom: 15px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border: none;
+}
+
+/*create post form*/
+
+.create-page {
+    text-align: center;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.create .form-group {
+    margin: auto;
+    max-width: 700px;
+    background-color: #E3F5FA;
+    padding: 25px;
+}
+
+.create label{
+    font-size: 20px;
+    color:#046B99;
+    font-weight: 600;
+}
+
+.create .btn {
+    width: 650px;
+    height: 50px;
+    margin: 25px;
+    font-size: large;
+    background-color:#046B99;
+    border-color:#046B99;
+    color:#fff;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 45px;
+}
 
 /*font*/
 
@@ -297,6 +417,24 @@ textarea {
     font-size: 28px;
     font-weight: 600;
     color: #1C304A;
+}
+
+.heading-two-medium {
+    font-size: 28px;
+    font-weight: 600;
+    color: #046B99;
+}
+
+.heading-three {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1C304A;
+}
+
+.heading-three-medium {
+    font-size: 22px;
+    font-weight: 600;
+    color: #046B99;
 }
 
 .paragraph-three {
