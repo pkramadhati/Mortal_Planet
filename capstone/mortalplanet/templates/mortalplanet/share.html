@@ -20,7 +20,7 @@
 <div id="all-posts-view" class="container">
     {% for post in posts %}
     <div class="card card-block">
-        <small class="post-category">{{post.category}}</small>
+        <small class="post-category heading-five">{{post.category}}</small>
         <a href="{% url 'post' post.id %}">
             <div class="row no-gutters">
                 {% if post.image%}
@@ -35,12 +35,12 @@
                             <small>This post is no longer open.</small>
                         </div>
                         {% endif %}
-                        <h5 class="card-title">
+                        <h5 class="card-title heading-two">
                             {{ post.title }}
                         </h5>
-                        <p class="card-text card-text-description">{{ post.description }}</p>
-                        <p class="card-text"><small class="text-muted">Created {{ post.creation_time }}
-                                {{post.location}}</small></p>
+                        <p class="card-text card-text-description paragraph-three">{{ post.description }}</p>
+                        <p class="card-text paragraph-five text-muted">Created {{ post.creation_time }}
+                                {{post.location}}</p>
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@
     {% for post in posts %}
     {% if post.open %}
     <div class="card card-block">
-        <small class="post-category">{{post.category}}</small>
+        <small class="post-category heading-five">{{post.category}}</small>
         <a href="{% url 'post' post.id %}">
             <div class="row no-gutters">
                 {% if post.image%}
@@ -70,12 +70,12 @@
                             <small>This post is no longer open.</small>
                         </div>
                         {% endif %}
-                        <h5 class="card-title">
+                        <h5 class="card-title heading-two">
                             {{ post.title }}
                         </h5>
-                        <p class="card-text card-text-description">{{ post.description }}</p>
-                        <p class="card-text"><small class="text-muted">Created {{ post.creation_time }}
-                                {{post.location}}</small></p>
+                        <p class="card-text card-text-description paragraph-three">{{ post.description }}</p>
+                        <p class="card-text paragraph-five text-muted">Created {{ post.creation_time }}
+                                {{post.location}}</p>
                     </div>
                 </div>
             </div>

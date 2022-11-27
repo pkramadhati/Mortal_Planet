@@ -218,12 +218,22 @@ textarea {
 
 .container {
     margin-top: 50px;
-    background-color: #F3F3F3;
+    padding: 30px;
+    padding-bottom: 50px;
+    background-color: rgba(243, 243, 243, .6);
     border-radius: 58% 42% 62% 38% / 31% 96% 4% 69%;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 8px;
 }
 
 .card-text-description {
+    max-width: 500px;
+    max-height: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.card-title {
     max-width: 300px;
     max-height: 150px;
     overflow: hidden;
@@ -233,7 +243,7 @@ textarea {
 
 
 .card-block:nth-child(odd) {
-    padding: 40px 85px 40px 100px;
+    padding: 45px 85px 40px 100px;
     background-color: #E3F5FA;
     border-radius: 37% 63% 70% 30% / 44% 38% 62% 56%;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -241,7 +251,7 @@ textarea {
 
 
 .card-block:nth-child(even) {
-    padding: 40px 40px 80px 100px;
+    padding: 45px 40px 80px 100px;
     background-color: #ddedea;
     ;
     border-radius: 17% 83% 32% 68% / 58% 48% 52% 42%;
@@ -266,4 +276,44 @@ textarea {
 
 .card-body {
     margin-left: 20px;
+    padding: 5px !important;
+}
+
+.card-body .alert-danger{
+    max-width: 450px;
+}
+
+
+/*font*/
+
+.heading-five {
+    padding: 5px;
+    color: #046B99;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.heading-two {
+    font-size: 28px;
+    font-weight: 600;
+    color: #1C304A;
+}
+
+.paragraph-three {
+    font-size: 20px;
+    font-weight: 400;
+    color: #333333;
+
+}
+
+.paragraph-four {
+    font-size: 16px;
+    font-weight: 400;
+    color: #333333;
+}
+
+.paragraph-five {
+    font-size: 14px;
+    font-weight: 400;
+    color: #333333;
 }
