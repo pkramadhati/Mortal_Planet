@@ -48,6 +48,7 @@ navlink.forEach(link => {
     document.querySelector('#compose-view').style.display = 'none';
   }
   
+  
 
   //show myposts in profile
   var myposts = document.querySelector('#my-posts')
@@ -70,8 +71,10 @@ navlink.forEach(link => {
   if(submit){
   submit.addEventListener('submit', send_message);
 }
-});
 
+  // Reply
+  document.querySelector('#reply').addEventListener('click', compose_reply);
+});
 
 
 function add_message_to_mailbox(message) {
@@ -124,6 +127,7 @@ function load_myposts() {
     document.querySelector('#compose-view').style.display = 'none';
     document.querySelector('#messages-view').style.display = 'none';
     document.querySelector('#message-view').style.display = 'none';
+    document.querySelector('#profile-home').style.display = 'none';
     document.querySelector('#my-posts-view').style.display = 'block';
 
 }
@@ -135,6 +139,7 @@ function load_compose(){
     document.querySelector('#my-posts-view').style.display = 'none';
     document.querySelector('#messages-view').style.display = 'none';
     document.querySelector('#message-view').style.display = 'none';
+    document.querySelector('#profile-home').style.display = 'none';
     document.querySelector('#compose-view').style.display = 'block';
   
 }
@@ -147,6 +152,7 @@ function load_mailbox(mailbox) {
   curMailbox = mailbox;
   document.querySelector('#my-posts-view').style.display = 'none';
   document.querySelector('#message-view').style.display = 'none';
+  document.querySelector('#profile-home').style.display = 'none';
   document.querySelector('#messages-view').style.display = 'block';
   document.querySelector('#compose-view').style.display = 'none';   
 
@@ -188,11 +194,42 @@ function send_message(event) {
   event.preventDefault();
 }
 
+
+function compose_message() {
+
+  // Show compose view and hide other views
+  document.querySelector('#my-posts-view').style.display = 'none';
+  document.querySelector('#messages-view').style.display = 'none';
+  document.querySelector('#message-view').style.display = 'none';
+  document.querySelector('#profile-home').style.display = 'none';
+  document.querySelector('#compose-view').style.display = 'block';
+
+
+  // Clear out composition fields
+  document.querySelector('#compose-recipients').value = '';
+  document.querySelector('#compose-subject').value = '';
+  document.querySelector('#compose-body').value = '';
+}
+
+
+//reply 
+function compose_reply() {
+
+  // Start a new email
+  compose_message(); 
+
+  // Pre-fill recipients, subject, and body with standard reply-to information
+  document.querySelector('#compose-recipients').value = curMessage.sender;
+  document.querySelector('#compose-subject').value = curMessage.subject.slice(0, 4) === 'Re: ' ? curMessage.subject : `Re: ${curMessage.subject}`;
+  document.querySelector('#compose-body').value = `\n\nOn ${curMessage.timestamp} ${curMessage.sender} wrote:\n${curMessage.body}`;
+}
+
 function show_message(message_id) {
 
   // Show the message view and hide the other views
   document.querySelector('#message-view').style.display = 'block';
   document.querySelector('#messages-view').style.display = 'none';
+  document.querySelector('#profile-home').style.display = 'none';
   document.querySelector('#compose-view').style.display = 'none';
 
   // Clear out message contents

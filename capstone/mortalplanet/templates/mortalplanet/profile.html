@@ -2,12 +2,23 @@
 {% load static %}
 
 {% block body %}
-<h2>{{user.first_name}}'s profile</h2>
+<div class="row profile-name">
+    <div class="col">
+        <h2 class=".heading-two">{{user.first_name}}'s profile</h2>
+    </div>
+</div>
 <div class="row">
     <div class="col-1" id="profileNav">
         <ul class="nav profile-nav">
             <li class="nav-item">
-                <a class="nav-link profile-nav-button active" id="my-posts">
+                <a class="nav-link profile-nav-button active" href="{% url 'profile' user.id %}">
+                    <span class="material-symbols-outlined">
+                        location_away
+                    </span>
+                </a> &nbsp;
+            </li>
+            <li class="nav-item">
+                <a class="nav-link profile-nav-button" id="my-posts">
                     <span class="material-symbols-outlined">
                         view_list
                     </span>
@@ -37,29 +48,34 @@
         </ul>
     </div>
 
+
     <div class="profile-content col-6">
+        <div id="profile-home">
+            test
+        </div>
 
         <div id="messages-view">
         </div>
 
 
         <div id="message-view">
-
-            <div>
-                <strong>From:</strong> <span id="message-from"></span>
-            </div>
-            <div>
-                <strong>To:</strong> <span id="message-to"></span>
-            </div>
-            <div>
-                <strong>Subject:</strong> <span id="message-subject"></span>
-            </div>
-            <div>
-                <strong>Timestamp:</strong> <span id="message-timestamp"></span>
-            </div>
-            <button id="reply" class="btn btn-sm btn-outline-primary">Reply</button>
-            <hr>
-            <div id="message-body">
+            <div class="paragraph-fourpointfive-dark">
+                <div class="mb-1">
+                    <strong>From:</strong> <span id="message-from"></span>
+                </div>
+                <div class="mb-1">
+                    <strong>To:</strong> <span id="message-to"></span>
+                </div>
+                <div class="mb-1">
+                    <strong>Subject:</strong> <span id="message-subject"></span>
+                </div>
+                <div class="mb-1">
+                    <strong>Timestamp:</strong> <span id="message-timestamp"></span>
+                </div>
+                <button id="reply" class="btn btn-sm btn-outline-primary">Reply</button>
+                <hr>
+                <div id="message-body">
+                </div>
             </div>
         </div>
 
@@ -82,7 +98,7 @@
 
 
         <div id="my-posts-view" class="posts-view container">
-    
+
             {% for post in myposts %}
             <div class="card card-block">
                 <small class="post-category heading-five">{{post.category}}</small>
