@@ -94,25 +94,25 @@ textarea {
     font-size: 24px;
 }
 
-/* Navigation menu */
 
-.nav {
+/* Main Navigation menu */
+
+.nav.main-nav {
     max-height: 46px;
     align-items: center;
 }
 
-.nav p {
+.nav.main-nav p {
     margin: 0px;
     color: #046B99;
     font-size: small;
 }
 
-.nav a {
+.nav.main-nav a {
     max-height: 46px;
     padding: 10px;
 }
 
-/* Main Navigation menu */
 
 .main-nav {
     background-color: #E3F5FA;
@@ -163,6 +163,21 @@ textarea {
 }
 
 /*Sub Navigation Menu*/
+.nav.sub-nav {
+    max-height: 46px;
+    align-items: center;
+}
+
+.nav.sub-nav p {
+    margin: 0px;
+    color: #046B99;
+    font-size: small;
+}
+
+.nav.sub-nav a {
+    max-height: 46px;
+    padding: 10px;
+}
 
 .sub-nav {
     background-color: #B3EFF8;
@@ -285,7 +300,7 @@ textarea {
 
 /*expanded posts*/
 
-.material-symbols-outlined {
+.back-icon .material-symbols-outlined {
     color:#046B99;
     font-size: 35px;
 }
@@ -368,6 +383,7 @@ textarea {
     border: none;
 }
 
+
 /*create post form*/
 
 .create-page {
@@ -403,6 +419,23 @@ textarea {
     font-weight: 600;
     border-radius: 45px;
 }
+
+/*profile|messaging*/
+
+.profile-nav{
+    display: inline-block;
+}
+
+.profile-nav .material-symbols-outlined {
+    color:#046B99;
+    font-size: 35px;
+}
+
+.profile-nav a.active{
+background-color:#B3EFF8;
+padding-right: 10px;
+}
+
 
 /*font*/
 

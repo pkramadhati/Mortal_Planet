@@ -3,102 +3,116 @@
 
 {% block body %}
 <h2>{{user.first_name}}'s profile</h2>
-
-<ul class="nav">
-    <li class="nav-item">
-        <button class="nav-link" id="my-posts">
-            My Posts
-        </button> &nbsp;
-    </li>
-    <li>
-        <button class="nav-link" id="inbox">
-            Inbox
-        </button> &nbsp;
-    </li>
-    <li>
-        <button class="nav-link" id="sent">
-            Sent
-        </button> &nbsp;
-    </li>
-    <li>
-        <button class="nav-link" id="compose">
-            Send Message
-        </button> &nbsp;
-    </li>
-</ul>
-
-
-<div id="messages-view">
-</div>
-
-
-<div id="message-view">
-    
-    <div>
-        <strong>From:</strong> <span id="message-from"></span>
+<div class="row">
+    <div class="col-1" id="profileNav">
+        <ul class="nav profile-nav">
+            <li class="nav-item">
+                <a class="nav-link profile-nav-button active" id="my-posts">
+                    <span class="material-symbols-outlined">
+                        view_list
+                    </span>
+                </a> &nbsp;
+            </li>
+            <li class="nav-item">
+                <a class="nav-link profile-nav-button" id="inbox">
+                    <span class="material-symbols-outlined">
+                        mail
+                    </span>
+                </a> &nbsp;
+            </li>
+            <li class="nav-item">
+                <a class="nav-link profile-nav-button" id="sent">
+                    <span class="material-symbols-outlined">
+                        send
+                    </span>
+                </a> &nbsp;
+            </li>
+            <li class="nav-item">
+                <a class="nav-link profile-nav-button" id="compose">
+                    <span class="material-symbols-outlined">
+                        edit
+                    </span>
+                </a> &nbsp;
+            </li>
+        </ul>
     </div>
-    <div>
-        <strong>To:</strong> <span id="message-to"></span>
-    </div>
-    <div>
-        <strong>Subject:</strong> <span id="message-subject"></span>
-    </div>
-    <div>
-        <strong>Timestamp:</strong> <span id="message-timestamp"></span>
-    </div>
-    <button id="reply" class="btn btn-sm btn-outline-primary">Reply</button>
-    <hr>
-    <div id="message-body">
-    </div>
-</div>
 
-<div id="compose-view">
-    <h3>New Message</h3>
-    <form id="compose-form" method="post" action="{% url 'compose' %}">
-        <div class="form-group">
-            From: <input disabled class="form-control" value="{{ request.user }}">
+    <div class="profile-content col-6">
+
+        <div id="messages-view">
         </div>
-        <div class="form-group">
-            To: <input id="compose-recipients" class="form-control">
-        </div>
-        <div class="form-group">
-            <input class="form-control" id="compose-subject" placeholder="Subject">
-        </div>
-        <textarea class="form-control" id="compose-body" placeholder="Body"></textarea>
-        <input type="submit" class="btn btn-primary" />
-    </form>
-</div>
 
 
-<div id="my-posts-view" class="posts-view container">
-    {% for post in myposts %}
-    <div class="card card-block">
-        <small class="post-category heading-five">{{post.category}}</small>
-        <a href="{% url 'post' post.id %}">
-            <div class="row no-gutters">
-                {% if post.image%}
-                <div class="col-md-3">
-                    <img src="{{post.image.url }}" class="card-img" alt="{{ post.title }}">
+        <div id="message-view">
+
+            <div>
+                <strong>From:</strong> <span id="message-from"></span>
+            </div>
+            <div>
+                <strong>To:</strong> <span id="message-to"></span>
+            </div>
+            <div>
+                <strong>Subject:</strong> <span id="message-subject"></span>
+            </div>
+            <div>
+                <strong>Timestamp:</strong> <span id="message-timestamp"></span>
+            </div>
+            <button id="reply" class="btn btn-sm btn-outline-primary">Reply</button>
+            <hr>
+            <div id="message-body">
+            </div>
+        </div>
+
+        <div id="compose-view">
+            <h3>New Message</h3>
+            <form id="compose-form" method="post" action="{% url 'compose' %}">
+                <div class="form-group">
+                    From: <input disabled class="form-control" value="{{ request.user }}">
                 </div>
-                {% endif %}
-                <div class="col-md-9">
-                    <div class="card-body">
-                        {% if not post.open %}
-                        <div class="alert-danger">
-                            <small>This post is no longer open.</small>
+                <div class="form-group">
+                    To: <input id="compose-recipients" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" id="compose-subject" placeholder="Subject">
+                </div>
+                <textarea class="form-control" id="compose-body" placeholder="Body"></textarea>
+                <input type="submit" class="btn btn-primary" />
+            </form>
+        </div>
+
+
+        <div id="my-posts-view" class="posts-view container">
+    
+            {% for post in myposts %}
+            <div class="card card-block">
+                <small class="post-category heading-five">{{post.category}}</small>
+                <a href="{% url 'post' post.id %}">
+                    <div class="row no-gutters">
+                        {% if post.image%}
+                        <div class="col-3">
+                            <img src="{{post.image.url }}" class="card-img" alt="{{ post.title }}">
                         </div>
                         {% endif %}
-                        <h5 class="card-title heading-two">
-                            {{ post.title }}
-                        </h5>
-                        <p class="card-text card-text-description paragraph-three">{{ post.description }}</p>
-                        <p class="card-text paragraph-five text-muted">Created {{ post.creation_time }}
-                                {{post.location}}</p>
+                        <div class="col-9">
+                            <div class="card-body">
+                                {% if not post.open %}
+                                <div class="alert-danger">
+                                    <small>This post is no longer open.</small>
+                                </div>
+                                {% endif %}
+                                <h5 class="card-title heading-two">
+                                    {{ post.title }}
+                                </h5>
+                                <p class="card-text card-text-description paragraph-three">{{ post.description }}</p>
+                                <p class="card-text paragraph-five text-muted">Created {{ post.creation_time }}
+                                    {{post.location}}</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
-        </a>
+            {% endfor %}
+        </div>
     </div>
-    {% endfor %}
 </div>
 {% endblock %}

@@ -24,7 +24,7 @@
         <a href="{% url 'post' post.id %}">
             <div class="row no-gutters">
                 {% if post.image%}
-                <div class="col-md-3">
+                <div class="col-3">
                     <img src="{{post.image.url }}" class="card-img" alt="{{ post.title }}">
                 </div>
                 {% endif %}
@@ -63,7 +63,7 @@
                     <img src="{{post.image.url }}" class="card-img" alt="{{ post.title }}">
                 </div>
                 {% endif %}
-                <div class="col-md-9">
+                <div class="col-9">
                     <div class="card-body">
                         {% if not post.open %}
                         <div class="alert-danger">

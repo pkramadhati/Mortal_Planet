@@ -4,9 +4,26 @@ let curMessage = null;
 
 document.addEventListener('DOMContentLoaded', function () {
  
- 
+
+  const header = document.getElementById("profileNav");
+  if(header){
+    console.log(header)
+    const btns = header.getElementsByClassName("profile-nav-button");
+    if (btns){
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+        });
+      }
+    }
+  }
+
+  
+
 //Get active page link   
-const navlink = document.querySelectorAll('.nav-link')
+const navlink = document.querySelectorAll('.main-nav .nav-link')
 navlink.forEach(link => {
   if(link.href === window.location.href){
     link.setAttribute('aria-current', 'page')
