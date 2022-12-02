@@ -2,14 +2,112 @@ body {
     font-family: 'Titillium Web', sans-serif;
 }
 
-textarea {
-    min-height: 400px;
+
+/*Index*/
+
+.index .index-banner {
+    border-radius: 60px;
+    margin: 35px;
+    padding: 25px;
+    background-color: #fff;
+    box-shadow: rgba(100, 100, 111, 0.07) 0px 7px 29px 0px;
+
+}
+
+.index .welcome-message {
+    font-family: 'Patrick Hand', cursive;
+    margin: 15px;
+    padding: 15px;
+    color: #1C304A;
+}
+
+.index .mainbtn {
+    margin: 25px;
+    padding: 25px;
+    width: 150px;
+    height: 150px;
+    border-radius: 35px;
+    background-color: #B3EFF8;
+}
+
+.index .mainbtn.mainbtn-share {
+    border-radius: 25% 75% 29% 71% / 62% 41% 59% 38%;
+    background-color: #E6EDFA;
+}
+
+.index .mainbtn.mainbtn-engage {
+    border-radius: 69% 31% 67% 33% / 34% 58% 42% 66%;
+    background-color: #E3F5FA;
+}
+
+.index .mainbtn.mainbtn-discover {
+    border-radius: 43% 57% 35% 65% / 71% 63% 37% 29%;
+    background-color: #DDEDEA;
+}
+
+.index .quote {
+    font-family: 'Poor Story', cursive;
+    margin: 10px;
+    padding: 20px;
+    color: #046B99;
+}
+
+.index .quote span {
+    font-size: 100px;
+
+}
+
+
+/*Compose Message*/
+
+#compose-view {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#compose-view textarea {
+    min-height: 150px;
+    max-width: 500px;
+}
+
+#compose-view #compose-form {
+    max-width: 500px;
+    background-color: #E3F5FA;
+    padding: 25px;
+    border-radius: 25px;
+}
+
+#compose-view .form-group {
+    max-width: 500px;
+    font-size: 20px;
+    color: #046B99;
+    font-weight: 600;
+}
+
+#compose-view .btn {
+    margin: 10px;
+    font-size: large;
+    background-color: #046B99;
+    border-color: #046B99;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 45px;
+}
+
+#compose-view .btn:hover {
+    background-color: #1C304A;
+    border-color: #1C304A;
+}
+
+#my-posts-view {
+    margin-top: -15px;
 }
 
 /*Inbox*/
 
 .message-row {
-    background-color:#ebebeb;
+    background-color: #ebebeb;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     border-radius: 25px;
     cursor: pointer;
@@ -19,8 +117,9 @@ textarea {
 }
 
 .message-row.message-read {
-    background-color:#fff;
+    background-color: #fff;
 }
+
 .message-row strong {
     padding-right: 8px;
 }
@@ -32,25 +131,26 @@ textarea {
 
 /*Open Mail*/
 
-.profile-content #message-view{
-    border-radius:67% 33% 66% 34% / 32% 49% 51% 68%;
+.profile-content #message-view {
+    border-radius: 67% 33% 66% 34% / 32% 49% 51% 68%;
     padding: 100px;
-    background-color:#E3F5FA;
+    background-color: #E3F5FA;
 }
 
-.profile-content #message-view button{
+.profile-content #message-view button {
     background-color: #046B99;
     border-color: #046B99;
     color: #fff;
     border-radius: 45px;
 }
 
-.profile-content #message-view button:hover{
+.profile-content #message-view button:hover {
     background-color: #1C304A;
     border-color: #1C304A;
     color: #fff;
     border-radius: 45px;
 }
+
 
 /*create floating post button*/
 
@@ -134,10 +234,10 @@ textarea {
 }
 
 .nav.main-nav a {
+    font-weight: 600;
     max-height: 46px;
     padding: 10px;
 }
-
 
 .main-nav {
     background-color: #E3F5FA;
@@ -200,6 +300,7 @@ textarea {
 }
 
 .nav.sub-nav a {
+    font-weight: 600;
     max-height: 46px;
     padding: 10px;
 }
@@ -230,6 +331,8 @@ textarea {
 }
 
 .sub-nav button {
+    font-weight: 600;
+    background-color: #B3EFF8;
     color: #1C304A;
     border-color: #E3F5FA;
     border-radius: 45px;
@@ -445,6 +548,11 @@ textarea {
     border-radius: 45px;
 }
 
+.create .btn:hover {
+    background-color: #1C304A;
+    border-color: #1C304A;
+}
+
 /*profile|messaging*/
 
 .profile-nav {
@@ -534,7 +642,7 @@ textarea {
 .paragraph-fourpointfive-dark {
     font-size: 18px;
     font-weight: 400;
-    color:#1C304A;
+    color: #1C304A;
 }
 
 .paragraph-five {

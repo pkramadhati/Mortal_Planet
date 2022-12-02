@@ -4,7 +4,7 @@
 {% block body %}
 <div class="row profile-name">
     <div class="col">
-        <h2 class=".heading-two">{{user.first_name}}'s profile</h2>
+        <h2 class="heading-three-medium">{{user.first_name}}'s profile</h2>
     </div>
 </div>
 <div class="row">
@@ -48,10 +48,15 @@
         </ul>
     </div>
 
-
     <div class="profile-content col-6">
         <div id="profile-home">
-            test
+            <h1 class="quote">
+                <span class="material-symbols-outlined">
+                    format_quote
+                </span>
+                “We cannot solve our problems with the same thinking we used when we created them.”
+                – Albert Einstein
+            </h1>
         </div>
 
         <div id="messages-view">
@@ -98,7 +103,7 @@
 
 
         <div id="my-posts-view" class="posts-view container">
-
+            <h3>My Posts</h3>
             {% for post in myposts %}
             <div class="card card-block">
                 <small class="post-category heading-five">{{post.category}}</small>

@@ -2,9 +2,46 @@
 {% load static %}
 
 {% block body %}
-{% if user.is_authenticated %}
-<h2>Welcome {{user}}</h2>
-{% else %}
-<h2>Welcome to Mortal Planet</h2>
-{% endif %}
+<div class="container index">
+    <div  class="index-banner">
+    {% if user.is_authenticated %}
+    <div class="row mt-3 welcome-message">
+        <h2> Hi {{user}}...</h2>
+    </div>
+    <div class="row mt-3">
+        <div class="col-3 mainbtn mainbtn-share">
+            Share
+        </div>
+        <div class="col-3 mainbtn mainbtn-engage">
+            Engage
+        </div>
+        <div class="col-3 mainbtn mainbtn-discover">
+            Discover
+        </div>
+    </div>
+    {% else %}
+    <div class="row mt-3 welcome-message">
+        <h2>Welcome to Mortal Planet...</h2>
+    </div>
+    <div class="row mt-3">
+        <div class="col-3 mainbtn mainbtn-login">
+            Login
+        </div>
+        <div class="col-3 mainbtn mainbtn-signup">
+            Sign Up
+        </div>
+    </div>
+    {% endif %}
+</div>
+    <div class="row mt-3">
+        <div class="col">
+            <h1 class="quote">
+                <span class="material-symbols-outlined">
+                    format_quote
+                </span>
+                The greatest threat to our planet is the belief that someone else will save it - Robert Swan
+            </h1>
+        </div>
+    </div>
+</div>
 {% endblock %}
