@@ -9,14 +9,15 @@ body {
     border-radius: 60px;
     margin: 25px;
     padding: 25px;
-    background-color: #fff;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #EBEBEB;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
+    /* box-shadow: rgba(100, 100, 111, 0.05) 0px 7px 29px 0px; */
 
 }
 
 .index .index-banner .navbtn {
-    margin: 15px;
-    padding: 25px;
+    margin-left: 15px;
+    padding: 60px;
     justify-content: center;
 }
 
@@ -25,9 +26,14 @@ body {
     padding: 25px;
 }
 
+.index .index-banner .mainbtn:hover {
+    text-decoration: none;
+    font-weight: 900;
+}
+
 .index .welcome-message {
+    margin-left: 15px;
     font-family: 'Patrick Hand', cursive;
-    margin: 15px;
     padding: 15px;
     color: #1C304A;
 }
@@ -39,6 +45,38 @@ body {
     max-width: 200px;
     height: 200px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/*Index Login Illustrations*/
+.index .mainbtn.mainbtn-login img.outline {
+    border-radius: 82% 18% 31% 69% / 71% 54% 46% 29%;
+    background: #E6EDFA;
+    position:absolute;
+}
+
+.index .mainbtn.mainbtn-login img.outline:hover {
+    opacity: 0;
+}
+
+.index .mainbtn.mainbtn-login img.filled {
+    border-radius: 82% 18% 31% 69% / 71% 54% 46% 29%;
+    background: #E6EDFA;
+}
+
+/*Index Register Illustrations*/
+.index .mainbtn.mainbtn-register img.outline {
+    border-radius: 50% 50% 31% 69% / 71% 54% 46% 29%;
+    background: #DDEDEA;
+    position:absolute;
+}
+
+.index .mainbtn.mainbtn-register img.outline:hover {
+    opacity: 0;
+}
+
+.index .mainbtn.mainbtn-register img.filled {
+    border-radius: 50% 50% 31% 69% / 71% 54% 46% 29%;
+    background: #DDEDEA;
 }
 
 /*Index Share Illustrations*/
