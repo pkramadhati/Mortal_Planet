@@ -7,11 +7,22 @@ body {
 
 .index .index-banner {
     border-radius: 60px;
-    margin: 35px;
+    margin: 25px;
     padding: 25px;
     background-color: #fff;
-    box-shadow: rgba(100, 100, 111, 0.07) 0px 7px 29px 0px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
+}
+
+.index .index-banner .navbtn {
+    margin: 15px;
+    padding: 25px;
+    justify-content: center;
+}
+
+.index .index-banner .navbtn .navbtn-title {
+    margin: 0px 25px 0px 45px;
+    padding: 25px;
 }
 
 .index .welcome-message {
@@ -21,29 +32,65 @@ body {
     color: #1C304A;
 }
 
-.index .mainbtn {
-    margin: 25px;
-    padding: 25px;
-    width: 150px;
-    height: 150px;
-    border-radius: 35px;
-    background-color: #B3EFF8;
+/*Index Ilustrations*/
+.index .mainbtn img {
+    margin: 25px 25px 15px 25px;
+    padding: 10px;
+    max-width: 200px;
+    height: 200px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.index .mainbtn.mainbtn-share {
+/*Index Share Illustrations*/
+.index .mainbtn.mainbtn-share img.outline {
     border-radius: 25% 75% 29% 71% / 62% 41% 59% 38%;
-    background-color: #E6EDFA;
+    background: #E6EDFA;
+    position:absolute;
 }
 
-.index .mainbtn.mainbtn-engage {
+.index .mainbtn.mainbtn-share img.outline:hover {
+    opacity: 0;
+}
+
+.index .mainbtn.mainbtn-share img.filled {
+    border-radius: 25% 75% 29% 71% / 62% 41% 59% 38%;
+    background: #E6EDFA;
+}
+
+/*Index Engage Illustrations*/
+
+.index .mainbtn.mainbtn-engage img.outline{
     border-radius: 69% 31% 67% 33% / 34% 58% 42% 66%;
-    background-color: #E3F5FA;
+    background: #E3F5FA;
+    position:absolute;
 }
 
-.index .mainbtn.mainbtn-discover {
-    border-radius: 43% 57% 35% 65% / 71% 63% 37% 29%;
-    background-color: #DDEDEA;
+.index .mainbtn.mainbtn-engage img.outline:hover {
+    opacity: 0;
 }
+
+.index .mainbtn.mainbtn-engage img.filled {
+    border-radius: 69% 31% 67% 33% / 34% 58% 42% 66%;
+    background: #E3F5FA;
+}
+
+/*Index Discover Illustrations*/
+
+.index .mainbtn.mainbtn-discover img.outline {
+    border-radius: 43% 57% 35% 65% / 71% 63% 37% 29%;
+    background: #DDEDEA;
+    position:absolute;
+}
+.index .mainbtn.mainbtn-discover img.outline:hover {
+    opacity: 0;
+}
+
+.index .mainbtn.mainbtn-discover img.filled {
+    border-radius: 43% 57% 35% 65% / 71% 63% 37% 29%;
+    background: #DDEDEA;
+}
+
+/*Index Quote*/
 
 .index .quote {
     font-family: 'Poor Story', cursive;
@@ -54,9 +101,7 @@ body {
 
 .index .quote span {
     font-size: 100px;
-
 }
-
 
 /*Compose Message*/
 
@@ -623,7 +668,7 @@ body {
 .heading-four-medium {
     font-size: 16px;
     font-weight: 600;
-    color: #1C304A;
+    color:#046B99;
 }
 
 .paragraph-three {

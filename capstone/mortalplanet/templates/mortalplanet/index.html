@@ -3,36 +3,55 @@
 
 {% block body %}
 <div class="container index">
-    <div  class="index-banner">
-    {% if user.is_authenticated %}
-    <div class="row mt-3 welcome-message">
-        <h2> Hi {{user}}...</h2>
+    <div class="index-banner">
+        {% if user.is_authenticated %}
+        <div class="row mt-3 welcome-message">
+            <h2> Welcome back {{user}}...</h2>
+        </div>
+        <div class="row mt-3 navbtn">
+            <a href="{% url 'share' %}" class="col mainbtn mainbtn-share">
+                <div class="row">
+                    <img class="outline" src="/media/Index/Share.PNG">
+                    <img class="filled" src="/media/Index/ShareFilled.png">
+                </div>
+                <div class="row heading-four-medium navbtn-title">
+                    <h4>SHARE</h4>
+                </div>
+            </a>
+            <a href="{% url 'engage' %}" class="col mainbtn mainbtn-engage">
+                <div class="row">
+                    <img class="outline" src="/media/Index/Engage.PNG">
+                    <img class="filled" src="/media/Index/EngageFilled.png">
+                </div>
+                <div class="row heading-four-medium navbtn-title">
+                    <h4>ENGAGE</h4>
+                </div>
+            </a>
+            <a href="#" class="col mainbtn mainbtn-discover">
+                <div class="row">
+                    <img class="outline" src="/media/Index/Discover.PNG">
+                    <img class="filled" src="/media/Index/DiscoverFilled.png">
+                </div>
+                <div class="row heading-four-medium navbtn-title">
+                    <h4>DISCOVER</h4>
+                </div>
+            </a>
+
+        </div>
+        {% else %}
+        <div class="row mt-3 welcome-message">
+            <h2>Welcome to Mortal Planet...</h2>
+        </div>
+        <div class="row mt-3">
+            <div class="col-3 mainbtn mainbtn-login">
+                Login
+            </div>
+            <div class="col-3 mainbtn mainbtn-signup">
+                Sign Up
+            </div>
+        </div>
+        {% endif %}
     </div>
-    <div class="row mt-3">
-        <div class="col-3 mainbtn mainbtn-share">
-            Share
-        </div>
-        <div class="col-3 mainbtn mainbtn-engage">
-            Engage
-        </div>
-        <div class="col-3 mainbtn mainbtn-discover">
-            Discover
-        </div>
-    </div>
-    {% else %}
-    <div class="row mt-3 welcome-message">
-        <h2>Welcome to Mortal Planet...</h2>
-    </div>
-    <div class="row mt-3">
-        <div class="col-3 mainbtn mainbtn-login">
-            Login
-        </div>
-        <div class="col-3 mainbtn mainbtn-signup">
-            Sign Up
-        </div>
-    </div>
-    {% endif %}
-</div>
     <div class="row mt-3">
         <div class="col">
             <h1 class="quote">

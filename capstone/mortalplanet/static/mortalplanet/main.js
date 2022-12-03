@@ -19,8 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-
-
   //Get active page link   
   const navlink = document.querySelectorAll('.main-nav .nav-link')
   navlink.forEach(link => {
