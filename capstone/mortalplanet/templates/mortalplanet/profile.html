@@ -50,13 +50,28 @@
 
     <div class="profile-content col-6">
         <div id="profile-home">
+            <ul>
+                <li class="heading-three-medium">
+                    Name: <span class="paragraph-three"> {{user.first_name}} {{user.last_name}}&nbsp; &nbsp;|
+                    </span>
+                </li>
+                <li class="heading-three-medium">
+                    Username: <span class="paragraph-three">{{user.username}}&nbsp; &nbsp;|</span>
+                </li class="heading-three-medium">
+
+                <li class="heading-three-medium">
+                    Email: <span class="paragraph-three"> {{user.email}}&nbsp; &nbsp;|</span>
+                </li>
+            </ul>
+            <hr>
             <h1 class="quote">
                 <span class="material-symbols-outlined">
-                    format_quote
+                    &nbsp;&nbsp; format_quote
                 </span>
-                “We cannot solve our problems with the same thinking we used when we created them.”
-                – Albert Einstein
+                We cannot solve our problems with the same thinking we used when we created them.<small>- Albert
+                    Einstein</small>
             </h1>
+            <hr>
         </div>
 
         <div id="messages-view">

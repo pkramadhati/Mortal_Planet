@@ -6,18 +6,23 @@ body {
 /*Index*/
 
 .index .index-banner {
-    border-radius: 60px;
-    margin: 25px;
-    padding: 25px;
-    background-color: #EBEBEB;
+    /* border-radius: 60px; */
+    margin: 10px;
+    padding: 10px;
+    /* background-color: #F5F5F5; */
     /* box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
     /* box-shadow: rgba(100, 100, 111, 0.05) 0px 7px 29px 0px; */
-
 }
 
 .index .index-banner .navbtn {
     margin-left: 15px;
-    padding: 60px;
+    padding: 30px 60px 15px 60px;
+    justify-content: center;
+}
+
+.index .index-banner .navbtn.navbtn-no-login {
+    margin-left: 15px;
+    padding: 30px 120px 15px 120px;
     justify-content: center;
 }
 
@@ -26,9 +31,9 @@ body {
     padding: 25px;
 }
 
+
 .index .index-banner .mainbtn:hover {
     text-decoration: none;
-    font-weight: 900;
 }
 
 .index .welcome-message {
@@ -51,7 +56,7 @@ body {
 .index .mainbtn.mainbtn-login img.outline {
     border-radius: 82% 18% 31% 69% / 71% 54% 46% 29%;
     background: #E6EDFA;
-    position:absolute;
+    position: absolute;
 }
 
 .index .mainbtn.mainbtn-login img.outline:hover {
@@ -67,7 +72,7 @@ body {
 .index .mainbtn.mainbtn-register img.outline {
     border-radius: 50% 50% 31% 69% / 71% 54% 46% 29%;
     background: #DDEDEA;
-    position:absolute;
+    position: absolute;
 }
 
 .index .mainbtn.mainbtn-register img.outline:hover {
@@ -83,7 +88,7 @@ body {
 .index .mainbtn.mainbtn-share img.outline {
     border-radius: 25% 75% 29% 71% / 62% 41% 59% 38%;
     background: #E6EDFA;
-    position:absolute;
+    position: absolute;
 }
 
 .index .mainbtn.mainbtn-share img.outline:hover {
@@ -97,10 +102,10 @@ body {
 
 /*Index Engage Illustrations*/
 
-.index .mainbtn.mainbtn-engage img.outline{
+.index .mainbtn.mainbtn-engage img.outline {
     border-radius: 69% 31% 67% 33% / 34% 58% 42% 66%;
     background: #E3F5FA;
-    position:absolute;
+    position: absolute;
 }
 
 .index .mainbtn.mainbtn-engage img.outline:hover {
@@ -117,8 +122,9 @@ body {
 .index .mainbtn.mainbtn-discover img.outline {
     border-radius: 43% 57% 35% 65% / 71% 63% 37% 29%;
     background: #DDEDEA;
-    position:absolute;
+    position: absolute;
 }
+
 .index .mainbtn.mainbtn-discover img.outline:hover {
     opacity: 0;
 }
@@ -131,107 +137,15 @@ body {
 /*Index Quote*/
 
 .index .quote {
+    font-size: 60px;
     font-family: 'Poor Story', cursive;
-    margin: 10px;
-    padding: 20px;
+    margin: 25px 25px 50px 25px;
+    padding: 10px;
     color: #046B99;
 }
 
-.index .quote span {
-    font-size: 100px;
-}
-
-/*Compose Message*/
-
-#compose-view {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#compose-view textarea {
-    min-height: 150px;
-    max-width: 500px;
-}
-
-#compose-view #compose-form {
-    max-width: 500px;
-    background-color: #E3F5FA;
-    padding: 25px;
-    border-radius: 25px;
-}
-
-#compose-view .form-group {
-    max-width: 500px;
-    font-size: 20px;
-    color: #046B99;
-    font-weight: 600;
-}
-
-#compose-view .btn {
-    margin: 10px;
-    font-size: large;
-    background-color: #046B99;
-    border-color: #046B99;
-    color: #fff;
-    font-size: 20px;
-    font-weight: 600;
-    border-radius: 45px;
-}
-
-#compose-view .btn:hover {
-    background-color: #1C304A;
-    border-color: #1C304A;
-}
-
-#my-posts-view {
-    margin-top: -15px;
-}
-
-/*Inbox*/
-
-.message-row {
-    background-color: #ebebeb;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    border-radius: 25px;
-    cursor: pointer;
-    margin: 15px;
-    padding: 15px;
-    width: 100%;
-}
-
-.message-row.message-read {
-    background-color: #fff;
-}
-
-.message-row strong {
-    padding-right: 8px;
-}
-
-.message-timestamp {
-    color: #888888;
-    float: right;
-}
-
-/*Open Mail*/
-
-.profile-content #message-view {
-    border-radius: 67% 33% 66% 34% / 32% 49% 51% 68%;
-    padding: 100px;
-    background-color: #E3F5FA;
-}
-
-.profile-content #message-view button {
-    background-color: #046B99;
-    border-color: #046B99;
-    color: #fff;
-    border-radius: 45px;
-}
-
-.profile-content #message-view button:hover {
-    background-color: #1C304A;
-    border-color: #1C304A;
-    color: #fff;
-    border-radius: 45px;
+.index .quote span.material-symbols-outlined {
+    font-size: 150px;
 }
 
 
@@ -664,6 +578,120 @@ body {
     padding: 25px;
 }
 
+/*Profile Quote*/
+
+#profile-home .quote {
+    font-size: 30px;
+    font-family: 'Poor Story', cursive;
+    margin: 10px;
+    padding: 10px;
+    color: #046B99;
+}
+
+#profile-home .quote span.material-symbols-outlined {
+    font-size: 50px;
+}
+/*Profile Home*/
+
+#profile-home li {
+    padding: 10px;
+    list-style: none;
+    display: inline-block;
+}
+
+/*Compose Message*/
+
+#compose-view {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#compose-view textarea {
+    min-height: 150px;
+    max-width: 500px;
+}
+
+#compose-view #compose-form {
+    max-width: 500px;
+    background-color: #E3F5FA;
+    padding: 25px;
+    border-radius: 25px;
+}
+
+#compose-view .form-group {
+    max-width: 500px;
+    font-size: 20px;
+    color: #046B99;
+    font-weight: 600;
+}
+
+#compose-view .btn {
+    margin: 10px;
+    font-size: large;
+    background-color: #046B99;
+    border-color: #046B99;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 45px;
+}
+
+#compose-view .btn:hover {
+    background-color: #1C304A;
+    border-color: #1C304A;
+}
+
+#my-posts-view {
+    margin-top: -15px;
+}
+
+/*Inbox*/
+
+.message-row {
+    background-color:#B3EFF8;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin: 15px;
+    padding: 15px;
+    width: 100%;
+}
+
+.message-row.message-read {
+    background-color: #F5F5F5;
+}
+
+.message-row strong {
+    padding-right: 8px;
+}
+
+.message-timestamp {
+    color: #888888;
+    float: right;
+}
+
+/*Open Mail*/
+
+.profile-content #message-view {
+    border-radius: 67% 33% 66% 34% / 32% 49% 51% 68%;
+    padding: 100px;
+    background-color: #E3F5FA;
+}
+
+.profile-content #message-view button {
+    background-color: #046B99;
+    border-color: #046B99;
+    color: #fff;
+    border-radius: 45px;
+}
+
+.profile-content #message-view button:hover {
+    background-color: #1C304A;
+    border-color: #1C304A;
+    color: #fff;
+    border-radius: 45px;
+}
+
 /*font*/
 
 .heading-five {
@@ -706,7 +734,7 @@ body {
 .heading-four-medium {
     font-size: 16px;
     font-weight: 600;
-    color:#046B99;
+    color: #046B99;
 }
 
 .paragraph-three {
