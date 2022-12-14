@@ -2,9 +2,11 @@
 let curMailbox = null;
 let curMessage = null;
 
+//Aspects of the code below is based on solutions to problem sets on CSCI-E-33
+
 document.addEventListener('DOMContentLoaded', function () {
 
-
+//Profile Nav Button Active
   const header = document.getElementById("profileNav");
   if (header) {
     const btns = header.getElementsByClassName("profile-nav-button");
@@ -19,11 +21,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  //Get active page link   
-  const navlink = document.querySelectorAll('.main-nav .nav-link')
+
+ //SOURCE: www.youtube.com/watch?v=HpjW9eaFLIg
+
+  //Get active page link 
+  const navlink = document.querySelectorAll('.nav-link')
   navlink.forEach(link => {
     if (link.href === window.location.href) {
       link.setAttribute('aria-current', 'page')
+      console.log(link.href)
     }
   })
 

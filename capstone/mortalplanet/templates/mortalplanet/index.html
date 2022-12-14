@@ -7,11 +7,18 @@
     <div class="row mt-3">
         <div class="col">
             <h1 class="quote">
+                {% if user.is_authenticated %}
                 <span class="material-symbols-outlined">
                     &nbsp;&nbsp; format_quote
                 </span>
                 The <strong>greatest threat</strong> to our planet is the belief that <strong>someone else</strong> will
                 save it <small>- Robert Swan</small>
+                {% else %}
+                <span>
+                    <img class="animated-gif" src="/media/Index/LogoIndex.gif">
+                </span>
+                Mortal Planet<small class="tiny"> is a </small> <span class="big">community</span> effort <small> towards </small> <strong class="big">conscious</strong> consumption 
+                {% endif %}
             </h1>
         </div>
     </div>
@@ -36,7 +43,7 @@
                     <h4 class="heading-two-medium navbtn-title">ENGAGE</h4>
                 </div>
             </a>
-            <a href="#" class="col mainbtn mainbtn-discover">
+            <a href="{% url 'discover' %}" class="col mainbtn mainbtn-engage">
                 <div class="row">
                     <img class="outline" src="/media/Index/Discover.png">
                     <img class="filled" src="/media/Index/DiscoverFilled.png">

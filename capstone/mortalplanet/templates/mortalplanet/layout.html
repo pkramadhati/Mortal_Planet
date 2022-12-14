@@ -38,7 +38,7 @@
 
     <ul class="nav main-nav">
         <li class="nav-item">
-            <a class="nav-link">Discover</a>
+            <a class="nav-link" href="{% url 'discover' %}">Discover</a>
         </li>
         {% if user.is_authenticated %}
         <li class="nav-item">

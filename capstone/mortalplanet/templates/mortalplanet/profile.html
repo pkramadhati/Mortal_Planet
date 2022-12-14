@@ -101,6 +101,9 @@
 
         <div id="compose-view">
             <h3>New Message</h3>
+            {% if message %}
+              {{ message }}
+            {% endif %}
             <form id="compose-form" method="post" action="{% url 'compose' %}">
                 <div class="form-group">
                     From: <input disabled class="form-control" value="{{ request.user }}">

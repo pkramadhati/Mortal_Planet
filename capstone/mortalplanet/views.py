@@ -8,6 +8,7 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from .models import User,Category,Location,Post,Comment,Message
 from django.views.decorators.csrf import csrf_exempt
+#Aspects of the code below is based on solutions to problem sets on CSCI-E-33
 
 
 
@@ -93,9 +94,7 @@ def share(request):
     return render(request, "mortalplanet/share.html", {
         "categories":Category.objects.filter(share=True),
         "posts":post,
-       
     })
-
 
 #Enagage Posts View 
 def engage(request):
@@ -103,6 +102,13 @@ def engage(request):
     return render(request, "mortalplanet/engage.html", {     
        "categories": Category.objects.filter(share=False),
        "posts":post,
+    })
+
+#Share Posts View 
+
+def discover(request):
+   
+    return render(request, "mortalplanet/discover.html", {  
     })
 
 #Filter Posts by category
@@ -183,7 +189,7 @@ def create(request):
             post = form.save(commit=False)
             post.poster = request.user
             post.save()
-            return HttpResponseRedirect(reverse("index"))
+            return HttpResponseRedirect(reverse("share"))
         else:
             return render(request, "mortalplanet/create.html", {
                 "form": form
@@ -242,8 +248,6 @@ def message(request, message_id):
         return JsonResponse({
             "error": "GET or PUT request required."
         }, status=400)
-
-
 
 
 # Compose Messages 

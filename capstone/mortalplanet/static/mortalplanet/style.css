@@ -2,16 +2,120 @@ body {
     font-family: 'Titillium Web', sans-serif;
 }
 
+.big {
+    font-size: 80px;
+    font-weight: 600;
+}
+
+
+.tiny {
+    font-size: 40px;
+}
+
+/*login*/
+
+.login-page {
+    max-width: 400px;
+    justify-content: center;
+    display: block;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login-page textarea {
+    min-height: 150px;
+    max-width: 300px;
+}
+
+.login-page form {
+    max-width: 500px;
+    background-color: #E3F5FA;
+    padding: 35px;
+    border-radius: 25px;
+}
+
+.login-page .form-group {
+    max-width: 500px;
+    font-size: 20px;
+    color: #046B99;
+    font-weight: 600;
+}
+
+.login-page .btn {
+    margin: 10px;
+    font-size: large;
+    background-color: #046B99;
+    border-color: #046B99;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 45px;
+}
+
+.login-page .btn:hover {
+    background-color: #1C304A;
+    border-color: #1C304A;
+}
+
+/*login*/
+
+.register-page {
+    max-width: 400px;
+    justify-content: center;
+    display: block;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.register-page textarea {
+    min-height: 150px;
+    max-width: 300px;
+}
+
+.register-page form {
+    max-width: 500px;
+    background-color: #E3F5FA;
+    padding: 35px;
+    border-radius: 25px;
+}
+
+.register-page .form-group {
+    max-width: 500px;
+    font-size: 20px;
+    color: #046B99;
+    font-weight: 600;
+}
+
+.register-page .btn {
+    margin: 10px;
+    font-size: large;
+    background-color: #046B99;
+    border-color: #046B99;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 45px;
+}
+
+.register-page .btn:hover {
+    background-color: #1C304A;
+    border-color: #1C304A;
+}
 
 /*Index*/
 
+.index .quote .animated-gif {
+    margin-left: 150px;
+    max-width: 125px;
+    height: auto;
+    color: #00CFFF;
+}
+
 .index .index-banner {
-    /* border-radius: 60px; */
     margin: 10px;
     padding: 10px;
-    /* background-color: #F5F5F5; */
-    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px; */
-    /* box-shadow: rgba(100, 100, 111, 0.05) 0px 7px 29px 0px; */
 }
 
 .index .index-banner .navbtn {
@@ -31,7 +135,6 @@ body {
     padding: 25px;
 }
 
-
 .index .index-banner .mainbtn:hover {
     text-decoration: none;
 }
@@ -41,6 +144,7 @@ body {
     font-family: 'Patrick Hand', cursive;
     padding: 15px;
     color: #1C304A;
+    align-items: flex-end;
 }
 
 /*Index Ilustrations*/
@@ -49,12 +153,12 @@ body {
     padding: 10px;
     max-width: 200px;
     height: 200px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 /*Index Login Illustrations*/
 .index .mainbtn.mainbtn-login img.outline {
-    border-radius: 82% 18% 31% 69% / 71% 54% 46% 29%;
+    border-radius: 71% 29% 75% 25% / 62% 76% 24% 38%;
     background: #E6EDFA;
     position: absolute;
 }
@@ -64,7 +168,7 @@ body {
 }
 
 .index .mainbtn.mainbtn-login img.filled {
-    border-radius: 82% 18% 31% 69% / 71% 54% 46% 29%;
+    border-radius: 71% 29% 75% 25% / 62% 76% 24% 38%;
     background: #E6EDFA;
 }
 
@@ -323,7 +427,7 @@ body {
 .sub-nav .nav-link[aria-current="page"] {
     border-radius: 70% 30% 59% 41% / 62% 50% 50% 38%;
     color: #046B99;
-    background-color: #fff;
+    background-color: #ffff;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -374,8 +478,8 @@ body {
 }
 
 .card-title {
-    max-width: 300px;
-    max-height: 150px;
+    max-width: 500px;
+    max-height: 200px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -407,10 +511,12 @@ body {
 }
 
 .card-block img {
+    display: block;
     padding: 10px 10px 10px 10px;
-    max-width: 300px;
+    max-height: 200px;
+    max-width: 100%;
+    width: auto;
     height: auto;
-
 }
 
 .card-body {
@@ -509,6 +615,66 @@ body {
 }
 
 
+/*dicover page*/
+.dicover-title {
+    margin-top: 50px;
+}
+
+.recycle-card {
+    transition-delay: 250ms !important;
+    transition: width 0.5s ease-out !important;
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    transition: width;
+    height: 200px;
+    background-color: #DDEDEA;
+    border-radius: 15px;
+    transition-property: width;
+    transition-duration: 1s;
+    transition-delay: 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+/* .recycle-card .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 600,
+    'GRAD' 0,
+    'opsz' 48
+  } */
+
+.recycle-card span.material-symbols-outlined.done {
+    color: green;
+}
+
+.recycle-card span.material-symbols-outlined.block {
+    color: red;
+}
+
+.recycle-card img {
+    max-width: 200x;
+    max-height: 200px;
+    overflow: hidden;
+}
+
+.recycle-card .card-content {
+    background-color: #E3F5FA;
+    min-width: 300px;
+    height: auto;
+    visibility: hidden;
+}
+
+.recycle-card:hover {
+    min-width: 525px;
+    height: auto;
+}
+
+.recycle-card:hover>.card-content {
+    visibility: visible;
+}
+
+
 /*create post form*/
 
 .create-page {
@@ -591,6 +757,7 @@ body {
 #profile-home .quote span.material-symbols-outlined {
     font-size: 50px;
 }
+
 /*Profile Home*/
 
 #profile-home li {
@@ -648,7 +815,7 @@ body {
 /*Inbox*/
 
 .message-row {
-    background-color:#B3EFF8;
+    background-color: #B3EFF8;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     border-radius: 25px;
     cursor: pointer;
@@ -723,6 +890,12 @@ body {
     font-size: 22px;
     font-weight: 600;
     color: #046B99;
+}
+
+.heading-threeFive-dark {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1C304A
 }
 
 .heading-four {
