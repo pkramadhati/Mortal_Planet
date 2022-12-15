@@ -1,8 +1,8 @@
-
+//Aspects of the code below is based on solutions to problem sets on CSCI-E-33
 let curMailbox = null;
 let curMessage = null;
 
-//Aspects of the code below is based on solutions to problem sets on CSCI-E-33
+
 
 document.addEventListener('DOMContentLoaded', function () {
 
